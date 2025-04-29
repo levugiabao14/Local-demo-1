@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LOCAL - Marketplace Freelancer</title>
+  <link rel="icon" href="local-logo.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+    .fade-up.active { opacity: 1; transform: translateY(0); }
+    .modal { display: none; }
+    .modal.active { display: flex; }
+  </style>
+</head>
+<body class="bg-[#FFF7E9] text-[#333]">
+
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <img src="local-logo.png" alt="LOCAL logo" class="h-9" />
+      <span class="text-xl font-bold text-[#333]">LOCAL</span>
+    </div>
+    <nav class="hidden md:flex gap-6 text-sm items-center">
+      <a href="local-flagship-homepage-final.html" class="hover:text-[#6E7A8A]">Trang chủ</a>
+      <a href="#" class="text-white bg-[#B9FBC0] px-4 py-2 rounded-full hover:bg-[#A0e8b0]">Marketplace</a>
+      <a href="#contact" class="hover:text-[#6E7A8A]">Liên hệ</a>
+    </nav>
+  </div>
+</header>
+
+<section class="py-20 px-6 text-center fade-up">
+  <h1 class="text-4xl font-bold text-[#1c1c1c] mb-4">Tìm Freelancer Trẻ Tài Năng</h1>
+  <p class="text-lg text-[#444]">Chọn freelancer phù hợp cho doanh nghiệp của bạn chỉ với vài cú click!</p>
+</section>
+
+<section class="py-12 px-6 fade-up">
+  <div class="max-w-7xl mx-auto flex flex-wrap gap-4 justify-center mb-10">
+    <select class="p-3 rounded-lg border bg-white shadow">
+      <option>Chọn kỹ năng</option>
+      <option>Thiết kế</option>
+      <option>Marketing</option>
+      <option>Content</option>
+      <option>Video Editing</option>
+    </select>
+    <select class="p-3 rounded-lg border bg-white shadow">
+      <option>Chọn kinh nghiệm</option>
+      <option>1-2 năm</option>
+      <option>3-5 năm</option>
+      <option>5+ năm</option>
+    </select>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+    <div onclick="openModal('freelancer1')" class="bg-white p-6 rounded-xl shadow hover:scale-105 transition cursor-pointer">
+      <img src="https://i.imgur.com/NqNdGch.png" alt="Freelancer" class="w-20 h-20 rounded-full mx-auto mb-4" />
+      <h3 class="text-lg font-bold text-center">Minh Anh</h3>
+      <p class="text-center text-sm text-[#666]">Thiết kế & Social Media</p>
+    </div>
+    <div onclick="openModal('freelancer2')" class="bg-white p-6 rounded-xl shadow hover:scale-105 transition cursor-pointer">
+      <img src="https://i.imgur.com/NqNdGch.png" alt="Freelancer" class="w-20 h-20 rounded-full mx-auto mb-4" />
+      <h3 class="text-lg font-bold text-center">Trung Hiếu</h3>
+      <p class="text-center text-sm text-[#666]">Content Creator & SEO</p>
+    </div>
+    <div onclick="openModal('freelancer3')" class="bg-white p-6 rounded-xl shadow hover:scale-105 transition cursor-pointer">
+      <img src="https://i.imgur.com/NqNdGch.png" alt="Freelancer" class="w-20 h-20 rounded-full mx-auto mb-4" />
+      <h3 class="text-lg font-bold text-center">Ngọc Bích</h3>
+      <p class="text-center text-sm text-[#666]">Video Editor</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="py-20 px-6 bg-[#B9FBC0] fade-up">
+  <div class="max-w-xl mx-auto text-center">
+    <h2 class="text-2xl font-bold mb-6 text-[#1c1c1c]">Trở thành Freelancer của LOCAL?</h2>
+    <a href="#" class="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition">Đăng ký ngay</a>
+  </div>
+</section>
+
+<footer class="bg-[#6E7A8A] text-white py-10 text-center text-sm">
+  © 2025 LOCAL – Kết nối · Phát triển · Thành công
+</footer>
+
+<div id="freelancer1" class="modal fixed inset-0 bg-black/40 justify-center items-center p-6">
+  <div class="bg-white p-8 rounded-xl max-w-md mx-auto relative">
+    <button onclick="closeModal('freelancer1')" class="absolute top-3 right-3 text-gray-500 hover:text-black">&times;</button>
+    <img src="https://i.imgur.com/NqNdGch.png" class="w-24 h-24 rounded-full mx-auto mb-4" />
+    <h3 class="text-xl font-bold text-center mb-2">Minh Anh</h3>
+    <p class="text-sm text-center text-[#666] mb-4">Thiết kế & Social Media, 2 năm kinh nghiệm</p>
+    <p class="text-center text-[#444]">“Tôi giúp SMEs nổi bật với thiết kế chuyên nghiệp và nội dung sáng tạo.”</p>
+  </div>
+</div>
+
+<div id="freelancer2" class="modal fixed inset-0 bg-black/40 justify-center items-center p-6">
+  <div class="bg-white p-8 rounded-xl max-w-md mx-auto relative">
+    <button onclick="closeModal('freelancer2')" class="absolute top-3 right-3 text-gray-500 hover:text-black">&times;</button>
+    <img src="https://i.imgur.com/NqNdGch.png" class="w-24 h-24 rounded-full mx-auto mb-4" />
+    <h3 class="text-xl font-bold text-center mb-2">Trung Hiếu</h3>
+    <p class="text-sm text-center text-[#666] mb-4">Content Creator & SEO, 3 năm kinh nghiệm</p>
+    <p class="text-center text-[#444]">“Tôi xây dựng nội dung hấp dẫn giúp SMEs tăng trưởng bền vững.”</p>
+  </div>
+</div>
+
+<div id="freelancer3" class="modal fixed inset-0 bg-black/40 justify-center items-center p-6">
+  <div class="bg-white p-8 rounded-xl max-w-md mx-auto relative">
+    <button onclick="closeModal('freelancer3')" class="absolute top-3 right-3 text-gray-500 hover:text-black">&times;</button>
+    <img src="https://i.imgur.com/NqNdGch.png" class="w-24 h-24 rounded-full mx-auto mb-4" />
+    <h3 class="text-xl font-bold text-center mb-2">Ngọc Bích</h3>
+    <p class="text-sm text-center text-[#666] mb-4">Video Editor, 2.5 năm kinh nghiệm</p>
+    <p class="text-center text-[#444]">“Tôi giúp SMEs truyền tải thông điệp bằng video ngắn viral.”</p>
+  </div>
+</div>
+
+<script>
+  function openModal(id) {
+    document.getElementById(id).classList.add('active');
+  }
+  function closeModal(id) {
+    document.getElementById(id).classList.remove('active');
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('active');
+    });
+  });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
